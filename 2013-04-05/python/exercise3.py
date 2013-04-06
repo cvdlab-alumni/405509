@@ -104,9 +104,16 @@ floor4 = T([1,2,3])([-1.25, -1.25, 100.0])(STRUCT([tetto1,tetto2]))
 #----------------------------------------------------VERTICAL ENCLOSURES--------------------------------------------------------------------------------
 # Facciata ovest
 partitionW_1 = INSR(PROD)(AA(QUOTE)([[95.12],[-64.5,2.5],[18.04]]))
-partitionW_2 = INSR(PROD)(AA(QUOTE)([[],[],[]]))
+partitionW_2 = INSR(PROD)(AA(QUOTE)([[72.25,-5.5,17.37],[-64.5,2.5],[-18.04,5.46]]))
+partitionW_3 = INSR(PROD)(AA(QUOTE)([[95.12],[-64.5,2.5],[-18.04,-5.46,1.5]]))
+partitionW_4 = INSR(PROD)(AA(QUOTE)([[95.12,17.38],[-64.5,2.5],[-18.04,-5.46,-1.5,13.5]]))
+partitionW_5 = INSR(PROD)(AA(QUOTE)([[62.5,-25.0,25.0],[-64.5,2.5],[-18.04,-5.46,-1.5,-13.5,10]]))
+partitionW_6 = INSR(PROD)(AA(QUOTE)([[112.5],[-64.5,2.5],[-18.04,-5.46,-1.5,-13.5,-10, 13.5]]))
+partitionW_7 = INSR(PROD)(AA(QUOTE)([[89.35,-1.5,5.5,-1.5,14.65],[-64.5,2.5],[-18.04,-5.46,-1.5,-13.5,-10, -13.5,10.0]]))
+partitionW_8 = INSR(PROD)(AA(QUOTE)([[112.5],[-64.5,2.5],[-18.04,-5.46,-1.5,-13.5,-10, -13.5,-10.0, 33]]))
 
-west = T([1,2])([-1.25, -1.25])(STRUCT([partitionW_1, partitionW_2]))
+
+west = T([1,2])([-1.25, -1.25])(STRUCT([partitionW_1, partitionW_2, partitionW_3, partitionW_4, partitionW_5, partitionW_6, partitionW_7, partitionW_8]))
 
 # Scheletro edificio
 building = STRUCT([pillars0, pillars1, pillars2, pillars3, floor0, floor1, floor2, floor3, floor4, west])
