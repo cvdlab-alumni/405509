@@ -115,6 +115,38 @@ partitionW_8 = INSR(PROD)(AA(QUOTE)([[112.5],[-64.5,2.5],[-18.04,-5.46,-1.5,-13.
 
 west = T([1,2])([-1.25, -1.25])(STRUCT([partitionW_1, partitionW_2, partitionW_3, partitionW_4, partitionW_5, partitionW_6, partitionW_7, partitionW_8]))
 
+# Facciata sud
+partitionS_1 = INSR(PROD)(AA(QUOTE)([[2.5],[2.5],[-25,59.5,-11,9.5]]))
+partitionS_2 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,50],[-25,3.0,-20.3,4.4,-20.3,11.5,-11,9.5]]))
+partitionS_3 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,-50,2.5],[-25,59.5,-11,9.5]]))
+partitionS_4 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,-50,-2.5,7.5],[-25,3,-20.3,36.2,-11,9.5]]))
+partitionS_5 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,-50,-2.5,-7.5,3.8],[-25,3,56.5,-11,9.5]]))
+
+
+south = T([1,2])([-1.25, -1.25])(STRUCT([partitionS_1,partitionS_2,partitionS_3, partitionS_4, partitionS_5]))
+
+# Facciata nord
+partitionN_1 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[2.5],[-25,80]]))
+partitionN_2 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-2.5,50],[-25,13.5,-10,13.5,-10,13.5,-10,9.5]]))
+partitionN_3 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-2.5,-50,9.0],[-25,80]]))
+partitionN_4 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-2.5,-50,-9.0,3],[-25,3,-25,3,-22,3,-21,3]]))
+partitionN_5 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[-64.5,2.5],[-25,80]]))
+
+
+north = T([1,2])([-1.25, -1.25])(STRUCT([partitionN_1, partitionN_2, partitionN_3, partitionN_4, partitionN_5]))
+
+# Facciata est
+partitionE_1 = INSR(PROD)(AA(QUOTE)([[55],[2.5],[-25,59.5,-11,9.5]]))
+partitionE_2 = INSR(PROD)(AA(QUOTE)([[-55,2.5],[2.5],[80.0]]))
+partitionE_3 = INSR(PROD)(AA(QUOTE)([[-57.5,25],[2.5],[-25,13.5,-10,13.5,-10,13.5,-10,9.5]]))
+partitionE_4 = INSR(PROD)(AA(QUOTE)([[-57.5,-25,30],[2.5],[-25,80.0]]))
+
+
+east = T([1,2])([-1.25, -1.25])(STRUCT([partitionE_1, partitionE_2, partitionE_3, partitionE_4]))
+
+
+
+
 # Scheletro edificio
-building = STRUCT([pillars0, pillars1, pillars2, pillars3, floor0, floor1, floor2, floor3, floor4, west])
+building = STRUCT([pillars0, pillars1, pillars2, pillars3, floor0, floor1, floor2, floor3, floor4, west, south, north, east])
 VIEW(building)
