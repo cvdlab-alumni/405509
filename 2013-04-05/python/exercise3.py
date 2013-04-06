@@ -122,8 +122,14 @@ partitionS_3 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,-50,2.5],[-25,59.5,-11,9.5]]))
 partitionS_4 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,-50,-2.5,7.5],[-25,3,-20.3,36.2,-11,9.5]]))
 partitionS_5 = INSR(PROD)(AA(QUOTE)([[2.5],[-2.5,-50,-2.5,-7.5,3.8],[-25,3,56.5,-11,9.5]]))
 
+# Facciata sud piano terra
+partitionS_6 = INSR(PROD)(AA(QUOTE)([[-14.5,2.5],[-19.4,33.1,2.5],[14.0]]))
+partitionS_7 = INSR(PROD)(AA(QUOTE)([[-14.5,2.5],[-19.4,6.5,-26.6,2.5],[14.0,10]]))
+partitionS_8 = INSR(PROD)(AA(QUOTE)([[-14.5,2.5],[-19.4,6.5,26.6,2.5],[-14.0,-10,1]]))
 
-south = T([1,2])([-1.25, -1.25])(STRUCT([partitionS_1,partitionS_2,partitionS_3, partitionS_4, partitionS_5]))
+
+
+south = T([1,2])([-1.25, -1.25])(STRUCT([partitionS_1,partitionS_2,partitionS_3, partitionS_4, partitionS_5, partitionS_6, partitionS_7, partitionS_8]))
 
 # Facciata nord
 partitionN_1 = INSR(PROD)(AA(QUOTE)([[-110,2.5],[2.5],[-25,80]]))
@@ -141,10 +147,13 @@ partitionE_2 = INSR(PROD)(AA(QUOTE)([[-55,2.5],[2.5],[80.0]]))
 partitionE_3 = INSR(PROD)(AA(QUOTE)([[-57.5,25],[2.5],[-25,13.5,-10,13.5,-10,13.5,-10,9.5]]))
 partitionE_4 = INSR(PROD)(AA(QUOTE)([[-57.5,-25,30],[2.5],[-25,80.0]]))
 
+# Facciata est piano terra
+partitionE_5 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,61],[-23.4,2.5],[14]]))
+partitionE_6 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,31],[-23.4,2.5],[-14,10]]))
+partitionE_7 = INSR(PROD)(AA(QUOTE)([[-14.5,-2.5,-7,61],[-23.4,2.5],[-24,1]]))
 
-east = T([1,2])([-1.25, -1.25])(STRUCT([partitionE_1, partitionE_2, partitionE_3, partitionE_4]))
 
-
+east = T([1,2])([-1.25, -1.25])(STRUCT([partitionE_1, partitionE_2, partitionE_3, partitionE_4,partitionE_5, partitionE_6, partitionE_7]))
 
 
 # Scheletro edificio
