@@ -1,4 +1,4 @@
-var domain = DOMAIN([[0,1],[0,2*PI]])([32,32]);
+var dom_circolare = DOMAIN([[0,1],[0,2*PI]])([40,40]);;
 var dom3D = DOMAIN([[0,1], [0,1], [0,1]])([10, 10, 10]);
 var dom2D = DOMAIN([[0,1], [0,1]])([32, 32]);
 
@@ -49,21 +49,20 @@ var base_acciaio = COLOR([81/255,88/255,91/255])(EXTRUDE([0.65])(arc(2*PI,0,0.5)
 var anellino =  COLOR([0,0,0])(TRANSLATE([2])([0.65])(EXTRUDE([0.05])(arc(2*PI,0,0.485))));
 var base_vetro = COLOR([1.5,1.5,1.5])(TRANSLATE([2])([0.7])(EXTRUDE([1.8])(arc(2*PI,0,0.5))));
 var p_a = BEZIER(S0)([[0.5,0,2.5],[0.5,0,2.8],[0.4,0,2.9],[0.8,0,3]]);
-var parte_alta = COLOR([1.5,1.5,1.5])(creaSolidoRotazione(p_a,domain));
+var parte_alta = COLOR([1.5,1.5,1.5])(creaSolidoRotazione(p_a,dom_circolare));
 var vite = TRANSLATE([0,2])([0.5,2.75])(sphere(0.05));
 var viti = COLOR([0.184,0.2,0.207])(STRUCT(REPLICA(4)([vite,ROTATE([0,1])(PI/2)])));
 
 /* parte superiore lampada */
 
 var f1 = BEZIER(S0)([[2,0,2],[2.2,0,3.4],[1.2,0,3.2],[0.8,0,3.2],[0.8,0,3]]);
-var base_fungo = COLOR([1,140/255,0])(creaSolidoRotazione(f1,domain));
+var base_fungo = COLOR([1,140/255,0])(creaSolidoRotazione(f1,dom_circolare));
 
 var anello = COLOR([0.184,0.2,0.207])(TRANSLATE([2])([3])(EXTRUDE([0.05])(arc(2*PI,0.7,0.8))));
 
 var f2 = BEZIER(S0)([[0.15,0,3.7],[0.5,0,3.60],[0.7,0,3.30],[0.7,0,3]]);
-var cappello_fungo =COLOR([1,1,0])( creaSolidoRotazione(f2,domain));
+var cappello_fungo =COLOR([1,1,0])( creaSolidoRotazione(f2,dom_circolare));
 
-/* lampadina */
 
 var bullone = function (){
 
@@ -73,10 +72,11 @@ var bullone = function (){
 	var bullone = COLOR(0,0,0)(STRUCT([base,a_l,a_l2]));
 	return bullone;
 };
+/* lampadina */
 
 var cil = COLOR([1,1,0])(EXTRUDE([0.2])(arc(2*PI,0,0.075)));
 var l1 = BEZIER(S0)([[0.075,0,0.2],[0.075,0,0.25],[0.48,0,0.53],[0.19,0,0.78],[0,0,0.75]]);
-var lamp = COLOR([1.5,1.5,1.5, 0.90])(creaSolidoRotazione(l1,domain));
+var lamp = COLOR([1.5,1.5,1.5, 0.90])(creaSolidoRotazione(l1,dom_circolare));
 var lampada = STRUCT([bullone(),cil,lamp]);
 var lampad = ROTATE([0,2])(PI/2)(lampada);
 var lampadina = TRANSLATE([0,2])([0.5,2.65])(lampad);

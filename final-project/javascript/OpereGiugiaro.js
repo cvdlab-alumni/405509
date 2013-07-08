@@ -165,4 +165,14 @@ function chimera(){
 
 var modello = STRUCT([TRANSLATE([1])([1.3])(SCALE([0,1,2])([0.4,0.4,0.4])(surf())),TRANSLATE([0,1])([-5,-1.5])(papiro()),
 					SCALE([0,1,2])([0.4,0.4,0.4])(chimera())]);
-DRAW(modello);
+
+var pavimento = COLOR([255/255,218/255,218/255])(TRANSLATE([0,1,2])([-8,-8,-1])(CUBOID([16,16,0.2])));
+var parete1 = COLOR([255/255,229/255,229/255])(TRANSLATE([0,1,2])([-8,8,-1])(CUBOID([16,0.05,8])));
+var parete2 = COLOR([255/255,229/255,229/255])(TRANSLATE([0,1,2])([-8,-8,-1])(CUBOID([0.05,16,8])));
+var parete3 = COLOR([255/255,229/255,229/255])(TRANSLATE([0,1,2])([8,-8,-1])(CUBOID([0.05,16,8])));
+
+var environment = STRUCT([pavimento,parete1,parete2,parete3]);
+
+var model = STRUCT([modello,environment]);
+
+DRAW(model);
