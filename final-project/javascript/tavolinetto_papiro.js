@@ -1,3 +1,5 @@
+/* Papiro  - Giugiaro Design                   */    
+/* Astolfi Cristiana - Final Project           */
 
 domain = INTERVALS(1)(32);
 dom2D = DOMAIN([[0,1], [0,1]])([32, 32]);

@@ -1,3 +1,5 @@
+/* Jug and Glass - Line Surf - Giugiaro Design */    
+/* Astolfi Cristiana - Final Project           */
 
 var domain = INTERVALS(1)(20);
 var dom_circolare = DOMAIN([[0,1],[0,2*PI]])([32,32]);

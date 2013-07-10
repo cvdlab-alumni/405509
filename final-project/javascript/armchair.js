@@ -1,3 +1,6 @@
+/* Leather armchair - Massoni Design           */    
+/* Astolfi Cristiana - Final Project           */
+
 var domain = INTERVALS(1)(20);
 var dom2D = DOMAIN([[0,1], [0,1]])([20, 20]);
 var dom3D = DOMAIN([[0,1], [0,1], [0,1]])([14,14,14]);
@@ -6,7 +9,7 @@ var dom3D = DOMAIN([[0,1], [0,1], [0,1]])([14,14,14]);
 var c1 = BEZIER(S0)([[2.71,0,4.06], [2.58,0, 4.57], [3.67,0.1, 4.36], [3.90,1.5, 4.32],
 					[3.20,1.5, 4.32], [3.20,4.1, 4.72], [3.20,3.30, 5.48], [3.20,4.38, 5.32]]); // curva esterna superiore
 var c2 = BEZIER(S0)([[2.71, 0, 2.7], [2.58,0, 2.68], [3.67,0.1, 2.69], [3.90,1.5, 2.8],
-					[3.20,1.5, 2.8], [3.20,4.1, 2.86], [3.20,4.17, 2.78], [3.20,4.38, 2.88]]); // curva estarna inferiore
+					[3.20,1.5, 2.8], [3.20,4.1, 2.86], [3.20,4.17, 2.78], [3.20,4.38, 2.88]]); // curva esterna inferiore
 var sup1 = MAP(BEZIER(S1)([c1,c2]))(dom2D); // sup esterna
 
 var c3 = BEZIER(S0)([[2.71,0,4],[2.71,1.5, 4.32], [2.71,4.1, 4.72], [2.71,4.17, 5.38], [2.71,4.38, 5.32]]); // curva interna superiore

@@ -1,4 +1,7 @@
-var dom_circolare = DOMAIN([[0,1],[0,2*PI]])([40,40]);;
+/* Brumbury Table Lamp - Massoni Design        */    
+/* Astolfi Cristiana - Final Project           */
+
+var dom_circolare = DOMAIN([[0,1],[0,2*PI]])([40,40]);
 var dom3D = DOMAIN([[0,1], [0,1], [0,1]])([10, 10, 10]);
 var dom2D = DOMAIN([[0,1], [0,1]])([32, 32]);
 
@@ -72,6 +75,7 @@ var bullone = function (){
 	var bullone = COLOR(0,0,0)(STRUCT([base,a_l,a_l2]));
 	return bullone;
 };
+
 /* lampadina */
 
 var cil = COLOR([1,1,0])(EXTRUDE([0.2])(arc(2*PI,0,0.075)));

@@ -1,3 +1,6 @@
+/* Chimera - Giugiaro Design                   */    
+/* Astolfi Cristiana - Final Project           */
+
 var dom_circolare = DOMAIN([[0,1],[0,2*PI]])([40,40]);
 var dom_semicircolare = DOMAIN([[0,1],[0,PI]])([40,40]);
 
